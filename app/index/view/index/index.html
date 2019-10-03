@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//imgcache.qq.com/open/qcloud/video/vcplayer/TcPlayer-2.3.2.js" charset="utf-8"></script>
+    <title>会场培训直播</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    .vcp-error-tips {
+        color: #fff;
+
+    }
+    a{
+        color: #fff;
+    }
+    .vcp-player .marker{
+        position: absolute;
+        font-size: 20px;
+        color: rgba(255, 255, 255, .5);
+        top: 0;
+        right: 5px;
+    }
+    .box {
+
+        height: 50%;
+        margin: 35% 20px 0 20px;
+        background-color: #fff;
+        box-sizing: border-box;
+        border-radius: 15px;
+        padding: 20px;
+    }
+
+    .title {
+        font-weight: bold;
+
+    }
+
+    input {
+        margin-top: 20px;
+        height: 30px;
+        border: none;
+        background-color: #f2f2f2;
+        font-size: 18px;
+        outline: none;
+        width: 90%;
+        color: #999999;
+        border-radius: 10px;
+        padding: 5px 0 5px 10px;
+    }
+
+    .dfac {
+        display: flex;
+        align-items: center;
+    }
+
+    .pwd {
+        color: #4a66da;
+        font-size: 18px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .login {
+        width: 80%;
+        margin-left: 10%;
+        margin-bottom: 5%;
+        margin-top: 5%;
+        border: 0;
+        background-color: #4a66da;
+        color: #fff;
+        height: 35px;
+        border-radius: 20px;
+    }
+</style>
+
+<body background="/web_static/images/background.png">
+<div id="video-container" style="margin: 0px auto;">
+</div>
+
+</body>
+<script>
+    (function () {
+        function getParams(name) {
+            var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) {
+                return decodeURIComponent(r[2]);
+            }
+            return null;
+        }
+
+        function getPathParams() {
+            var path = location.pathname.split('/');
+            if (path[1] == 'vod-player') {
+                return {
+                    'path': location.origin + path.slice(0, 4).join('/'),
+                    'appid': path[2],
+                    'fileid': path[3]
+                }
+            } else {
+                return null;
+            }
+        }
+
+        var rtmp = getParams('rtmp'),
+                flv = getParams('flv'),
+                m3u8 = getParams('m3u8'),
+                mp4 = getParams('mp4'),
+                live = (getParams('live') == 'true' ? true : false),
+                coverpic = getParams('coverpic'),
+                width = getParams('width'),
+                height = getParams('height'),
+                volume = getParams('volume'),
+                flash = (getParams('flash') == 'true' ? true : false),
+                x5_player = (getParams('x5_player') == 'false' ? false : true),
+                h5_flv = (getParams('h5_flv') == 'true' ? true : false),
+                autoplay = (getParams('autoplay') == 'true' ? true : false),
+                flashUrl = (function () {
+                    var params = getPathParams();
+                    if (params) {
+                        return params.path + '/player/release/QCPlayer.swf';
+                    }
+                    return '//imgcache.qq.com/open/qcloud/video/player/release/QCPlayer.swf'
+                })(),
+                log = getParams('log');
+        /**
+         * 视频类型播放优先级
+         * mobile ：m3u8>mp4
+         * PC ：RTMP>flv>m3u8>mp4
+         */
+
+        var options = {
+            m3u8: 'http://play.iws365.com/live/live.m3u8',
+            autoplay: autoplay,
+            poster : "http://www.cqccxyw.com/upload/admin/20190510/21e4d4d6d4e8f239288208da31444f24.png",
+            live: live,
+            x5_fullscreen: true,
+            width: width || '100%',
+            height: height || '300',
+            volume: volume || 0.5,
+            flash: flash,
+            flashUrl: flashUrl,
+            x5_player: x5_player,
+            h5_flv: h5_flv,
+            wording: {
+                2: '老师还没来呢',
+                2032: '请求视频失败，请检查网络',
+                2048: '请求m3u8文件失败，可能是网络错误或者跨域问题'
+            },
+            listener: function (msg) {
+                if(msg.type == 'load') {
+                    var _div = document.createElement('div');
+                    _div.className = 'marker';
+                    _div.innerText = '测试';
+                    document.querySelector('.vcp-player').appendChild(_div)
+                }
+            }
+        };
+        window.tcplayer = new TcPlayer('video-container', options);
+
+    })();
+</script>
+</html>

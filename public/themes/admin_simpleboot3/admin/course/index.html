@@ -1,0 +1,103 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="{:url('course/index')}">课程列表</a></li>
+        <li><a href="{:url('course/add')}">添加课程</a></li>
+    </ul>
+    <form class="well form-inline margin-top-20" method="post" action="{:url('course/index')}">
+        课程名称:
+        <input type="text" class="form-control" name="keyword"
+               value="{:input('request.keyword/s','')}" placeholder="请输入课程名称">
+        <input type="submit" class="btn btn-primary" value="搜索"/>
+        <a class="btn btn-danger" href="{:url('course/index')}">清空</a>
+    </form>
+    <table class="table table-hover table-bordered">
+        <thead>
+        <tr>
+            <th width="50">ID</th>
+            <th>课程名称</th>
+            <th>图片</th>
+            <th>培训时间</th>
+            <th>培训状态</th>
+            <th>添加时间</th>
+            <th width="130">{:lang('ACTIONS')}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <php>
+            $status=[0=>'未开播',1=>'直播中'];/*TODO ADD MORE*/
+        </php>
+        <foreach name="lists" item="vo">
+            <tr>
+                <td>{$vo.course_id}</td>
+                <td>{$vo.course_name}</td>
+                <td>
+                    <a href="javascript:parent.imagePreviewDialog('{:cmf_get_image_preview_url($vo['course_img'])}');">
+                        <i class="fa fa-photo fa-fw"></i>
+                    </a>
+                </td>
+                <td>{$vo.course_time}</td>
+                <td>
+                    {$status[$vo['course_status']]}&nbsp;
+                    <if condition='$vo.course_status eq 0'>
+                        <button onclick="change_live({$vo.course_id},1)" class="layui-btn layui-btn-xs">开启直播</button>
+                        <else/>
+                        <button onclick="change_live({$vo.course_id},0)" class="layui-btn layui-btn-xs" style="background: #E74C3C">关闭直播</button>
+                    </if>
+                </td>
+                <td>{:date('Y-m-d H:i:s',$vo['course_add_time'])}</td>
+                <td>
+                    <a href='{:url("course/edit",array("course_id"=>$vo["course_id"]))}'>{:lang('EDIT')}</a>
+                    <a class="js-ajax-delete" href="{:url('course/delete',array('course_id'=>$vo['course_id']))}">{:lang('DELETE')}</a>
+                </td>
+            </tr>
+        </foreach>
+        </tbody>
+    </table>
+    <div class="pagination">{$page}</div>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+<script>
+    function ajax_change_live(course_id,status){
+        $.ajax({
+            url:"{:url('ajax_change_live')}",
+            data:{course_id:course_id,status:status},
+            success:function(res){
+                if(res.status == 1){
+                    if(status == 1){
+                        layer.confirm('开播成功<br/>推流地址为：' + res.data.url + ' <br/>流名称为：' + res.data.name,{
+                            btn: ['确定','取消'], //按钮
+                            icon:1
+                        },function(){
+                            location.reload();
+                        },function(){
+                            location.reload();
+                        });
+                    }else{
+                        layer.msg('操作成功', {icon: 1},function(){
+                            location.reload();
+                        });
+                    }
+                }else{
+                    layer.msg(res.message, {icon: 2});
+                }
+            },
+            error:function(){
+                layer.msg('网络连接失败，请联系管理员', {icon: 2});
+            }
+        })
+    }
+    function change_live(course_id,status){
+        var title = status ? '开启直播' : '关闭直播';
+        layer.confirm(title,{
+            btn: ['确定','取消'], //按钮
+            icon:3
+        },function(){
+            ajax_change_live(course_id,status);
+        })
+    }
+</script>
+</body>
+</html>
