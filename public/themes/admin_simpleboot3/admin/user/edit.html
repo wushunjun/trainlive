@@ -3,14 +3,14 @@
 <body>
 	<div class="wrap">
 		<ul class="nav nav-tabs">
-			<li><a href="{:url('user/index')}">用户列表</a></li>
-			<li class="active"><a>编辑用户</a></li>
+			<li><a href="{:url('user/index')}">学员列表</a></li>
+			<li class="active"><a>编辑学员</a></li>
 		</ul>
 		<form method="post" class="form-horizontal js-ajax-form margin-top-20" action="{:url('user/edit')}">
 			<div class="form-group">
-				<label for="input-user_nickname" class="col-sm-2 control-label"><span class="form-required">*</span>用户昵称</label>
+				<label for="input-user_name" class="col-sm-2 control-label"><span class="form-required">*</span>姓名</label>
 				<div class="col-md-6 col-sm-10">
-					<input type="text" class="form-control" id="input-user_nickname" name="user_nickname" value="{$info.user_nickname}">
+					<input type="text" class="form-control" id="input-user_name" name="user_name" value="{$info.user_name}">
 				</div>
 			</div>
 			<div class="form-group">
@@ -20,34 +20,9 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="col-sm-2 control-label"><span class="form-required">*</span>头像</label>
-
+				<label for="input-user_password" class="col-sm-2 control-label">密码</label>
 				<div class="col-md-6 col-sm-10">
-					<div style="text-align: left;">
-						<input type="hidden" name="user_icon" id="thumbnail" value="{$info.user_icon|default=''}">
-						<a href="javascript:uploadOneImage('图片上传','#thumbnail');">
-							<if condition="empty($info.user_icon)">
-								<img src="__TMPL__/public/assets/images/default-thumbnail.png" id="thumbnail-preview" width="135" style="cursor: pointer"/>
-								<else/>
-								<img src="{$info.user_icon}" id="thumbnail-preview" width="135" style="cursor: pointer"/>
-							</if>
-						</a>
-						<input type="button" class="btn btn-sm btn-cancel-thumbnail" value="取消图片">
-					</div>
-				</div>
-			</div>
-			<div class="form-group">
-				<label class="col-sm-2 control-label">性别</label>
-				<div class="col-md-6 col-sm-10">
-					<label class="checkbox-inline">
-						<input value="0" type="radio" name="user_sex" <if condition="$info['user_sex'] eq 0">checked</if>>未知
-					</label>
-					<label class="checkbox-inline">
-						<input value="1" type="radio" name="user_sex" <if condition="$info['user_sex'] eq 1">checked</if>>男
-					</label>
-					<label class="checkbox-inline">
-						<input value="2" type="radio" name="user_sex" <if condition="$info['user_sex'] eq 2">checked</if>>女
-					</label>
+					<input type="text" class="form-control" id="input-user_password" name="user_password" placeholder="不修改请留空">
 				</div>
 			</div>
 			<div class="form-group">

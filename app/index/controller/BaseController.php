@@ -18,10 +18,12 @@ class BaseController extends Controller
     public $weixin_config;
     public $user;
     public function _initialize(){
+       // session('user_id',null);
+//        session('openid','oVxiL1ViWKZRk31_TwlMWLYh8Dao');
         $this->weixin_config = config('weixin_conf'); //获取微信配置
         if(is_array($this->weixin_config) && empty(session('openid'))){
             $wxuser = $this->GetOpenid(); //授权获取openid以及微信用户信息
-            $res = Db::name('user')->where(array('user_openid'=>$wxuser['openid']))->find();
+            /*$res = Db::name('user')->where(array('user_openid'=>$wxuser['openid']))->find();
             if(!$res){//如果不存在则添加用户
                 $data = $this->GetUserInfo($wxuser['access_token'],$wxuser['openid']);//获取微信用户信息
                 $user_data['user_nickname'] = trim($data['nickname']);
@@ -29,9 +31,19 @@ class BaseController extends Controller
                 $user_data['user_icon'] = $data['headimgurl'];
                 $user_data['user_openid'] = $data['openid'];
                 $user_data['user_add_time'] = time();
-                $user_id = Db::name('user')->insertGetId($user_data);
-            }
+                Db::name('user')->insertGetId($user_data);
+            }*/
             session('openid',$wxuser['openid']);
+        }
+        $this->user = Db::name('user')->where(['user_openid'=>session('openid')])->find();
+        $controller_name = request()->controller();
+        $exclude = [//不需要校验登录状态的控制器
+            'Login',
+            'Verification',
+        ];
+        //排除不需要校验登录状态的控制器
+        if(!in_array($controller_name,$exclude) && empty(session('user_id'))){
+            $this->redirect(url('login/index'));
         }
         $site_info = cmf_get_option('site_info');
         $this->assign('config',$site_info);

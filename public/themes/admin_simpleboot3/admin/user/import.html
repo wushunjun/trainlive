@@ -1,0 +1,39 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:url('user/index')}">学员列表</a></li>
+        <li class="active"><a href="javascript:;">导入学员</a></li>
+    </ul>
+    <form method="post" class="form-horizontal js-ajax-form margin-top-20" action="{:url('user/import')}">
+        <div class="form-group">
+            <label class="col-sm-2 control-label"><span class="form-required">*</span>上传Excel</label>
+
+            <div class="col-md-6 col-sm-10">
+                <div style="text-align: left;">
+                    <input id="files" readonly class="form-control" style="width: 30%;float: left" type="text" name="path">
+                    <button type="button" style="height: 34px;" class="layui-btn" onclick="uploadOne('附件上传','#files','file');"><i class="layui-icon"></i>上传文件</button>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-primary js-ajax-submit">提交</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+<script>
+    $(function () {
+
+        $('.btn-cancel-thumbnail').click(function () {
+            $('#thumbnail-preview').attr('src', '__TMPL__/public/assets/images/default-thumbnail.png');
+            $('#thumbnail').val('');
+        });
+
+    });
+</script>
+</body>
+</html>

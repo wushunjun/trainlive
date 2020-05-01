@@ -19,6 +19,8 @@ class IndexController extends BaseController
      */
     function index()
     {
+        $course = Db::name('course')->where(['course_status'=>1])->find();
+        $this->assign('course',$course);
         return $this->fetch();
     }
 }

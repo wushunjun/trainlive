@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>会场培训直播</title>
+    <script src="/static/js/jquery.js" charset="utf-8"></script>
+    <script src="/static/js/layer/layer.js" charset="utf-8"></script>
+</head>
+<style>
+    body {
+        height: 100%;
+    }
+
+
+    .box {
+
+        height: 50%;
+        margin: 35% 20px 0 20px;
+        background-color: #fff;
+        box-sizing: border-box;
+        border-radius: 15px;
+        padding: 20px;
+    }
+
+    .input-box {
+        background-color: #f3f3f3;
+        padding: 5px 0;
+    }
+
+    input {
+        height: 30px;
+        border: none;
+        background-color: #f2f2f2;
+        font-size: 18px;
+        outline: none;
+        width: 90%;
+        color: #999999;
+    }
+
+    .input-box {
+        padding: 5px 10px;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+        border-radius: 5px;
+    }
+
+    .input-box img {
+        width: 16px;
+        height: 18px;
+        padding-right: 10px;
+    }
+
+    .code {
+        width: 35%;
+        height: 30px;
+        padding: 5px 0;
+        margin-left: 5%;
+        background-color: #5d77e1;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        color: #fff;
+        text-align: center;
+        line-height: 30px;
+    }
+
+    .dfac {
+        display: flex;
+        align-items: center;
+    }
+
+    .login {
+        width: 80%;
+        margin-left: 10%;
+        margin-bottom: 5%;
+        margin-top: 5%;
+        border: 0;
+        background-color: #4a66da;
+        color: #fff;
+        height: 35px;
+        border-radius: 20px;
+    }
+</style>
+
+<body background="/web_static/images/background.png">
+<form id="theForm">
+    <div class="box">
+        <div class="input-box">
+            <img src="/web_static/images/tel.png" alt="">
+            <input type="text" name="user_mobile" placeholder="请输入您的手机号">
+        </div>
+        <div class="input-box">
+            <img src="/web_static/images/pwd.png" alt="">
+            <input type="password" name="user_password" placeholder="请输入6位数字密码">
+        </div>
+        <div class="dfac">
+            <div class="input-box" style="width: 60%">
+                <img src="/web_static/images/code.png" alt="">
+                <input type="number" name="code" style="width: 90%" placeholder="输入验证码">
+            </div>
+            <div class="code">获取验证码</div>
+        </div>
+        <button type="button" class="login">进入直播</button>
+    </div>
+
+</form>
+
+</body>
+<script>
+    $(function () {
+        $('.login').click(function () {
+            var data = $('#theForm').serialize();
+            $.ajax({
+                url: "{:url('do_register')}",
+                data: data,
+                dataType: 'json',
+                success: function (res) {
+                    if (res.status == 1) {
+                        location.reload();
+                    } else {
+                        layer.msg(res.message,{icon:2});
+                    }
+                }
+            })
+        });
+        var a=60;
+        function me(){
+            $(".code").text(a)
+            if(a>0){
+                a--;
+            }
+            else if(a<=0){
+                $(".code").text("再次获取验证码");
+                $(".code").css("pointer-events","auto");
+            }
+        }
+        /*注册获取短信验证*/
+        $('.code').click(function(){
+            var user_mobile = $("input[name='user_mobile']").val().trim();
+            if($(this).text()=='获取验证码'||$(this).text()=='再次获取验证码'){
+                var res = /^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/;
+                if(!res.test(user_mobile)){
+                    layer.msg('请输入正确的手机号！',{icon:2});
+                    return false;
+                }else{
+                    $.ajax({
+                        url:"{:url('verification/send')}",
+                        data:{user_mobile:user_mobile},
+                        dataType:'json',
+                        success:function(res){
+                            if (res.status == 1) {
+                                layer.msg(res.message,{icon:1});
+                                a = 60;
+                                $('.code').text(a);
+                                setInterval(me,1000);
+                                $('.code').css("pointer-events","none");//屏蔽事件
+                            } else {
+                                layer.msg(res.message,{icon:2});
+                            }
+                        }
+                    });
+                }
+            }
+        });
+    })
+</script>
+</html>

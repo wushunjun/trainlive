@@ -1203,36 +1203,30 @@ function cmf_get_verification_code($account, $length = 6)
     $currentTime = time();
     $maxCount = 5;
     $findVerificationCode = $verificationCodeQuery->where('account', $account)->find();
-    $result = false;
-    if (empty($findVerificationCode)) {
-        $result = true;
-    } else {
+
+    if ($findVerificationCode) {
         $sendTime = $findVerificationCode['send_time'];
-        $todayStartTime = strtotime(date('Y-m-d', $currentTime));
-        if ($sendTime < $todayStartTime) {
-            $result = true;
-        } else if ($findVerificationCode['count'] < $maxCount) {
-            $result = true;
+        if ($currentTime - $sendTime < 60) {
+            return ['status'=>0,'message'=>'发送短信太频繁，请稍后再试'];
+        } else if ($findVerificationCode['count'] > $maxCount) {
+            return ['status'=>0,'message'=>'一天之内最多只能发送5次'];
         }
     }
-
-    if ($result) {
-        switch ($length) {
-            case 4:
-                $result = rand(1000, 9999);
-                break;
-            case 6:
-                $result = rand(100000, 999999);
-                break;
-            case 8:
-                $result = rand(10000000, 99999999);
-                break;
-            default:
-                $result = rand(100000, 999999);
-        }
+    switch ($length) {
+        case 4:
+            $result = rand(1000, 9999);
+            break;
+        case 6:
+            $result = rand(100000, 999999);
+            break;
+        case 8:
+            $result = rand(10000000, 99999999);
+            break;
+        default:
+            $result = rand(100000, 999999);
     }
 
-    return $result;
+    return ['status'=>1,'data'=>$result];
 }
 
 /**

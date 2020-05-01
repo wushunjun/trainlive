@@ -13,20 +13,24 @@
         margin: 0;
         padding: 0;
     }
+
     .vcp-error-tips {
         color: #fff;
 
     }
-    a{
+
+    a {
         color: #fff;
     }
-    .vcp-player .marker{
+
+    .vcp-player .marker {
         position: absolute;
         font-size: 20px;
         color: rgba(255, 255, 255, .5);
         top: 0;
         right: 5px;
     }
+
     .box {
 
         height: 50%;
@@ -81,91 +85,103 @@
 </style>
 
 <body background="/web_static/images/background.png">
-<div id="video-container" style="margin: 0px auto;">
-</div>
+<if condition="$course">
+    <div id="video-container" style="margin: 0px auto;">
+    </div>
+    <p style="margin-top: 20px;padding-left: 10px;">
+        课程标题：{$course.course_name}
+    </p>
+    <p style="padding-left: 10px;">
+        课程内容：{$course.course_content}
+    </p>
+    <script>
+        (function () {
+            function getParams(name) {
+                var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
 
-</body>
-<script>
-    (function () {
-        function getParams(name) {
-            var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
-
-            var r = window.location.search.substr(1).match(reg);
-            if (r != null) {
-                return decodeURIComponent(r[2]);
-            }
-            return null;
-        }
-
-        function getPathParams() {
-            var path = location.pathname.split('/');
-            if (path[1] == 'vod-player') {
-                return {
-                    'path': location.origin + path.slice(0, 4).join('/'),
-                    'appid': path[2],
-                    'fileid': path[3]
+                var r = window.location.search.substr(1).match(reg);
+                if (r != null) {
+                    return decodeURIComponent(r[2]);
                 }
-            } else {
                 return null;
             }
-        }
 
-        var rtmp = getParams('rtmp'),
-                flv = getParams('flv'),
-                m3u8 = getParams('m3u8'),
-                mp4 = getParams('mp4'),
-                live = (getParams('live') == 'true' ? true : false),
-                coverpic = getParams('coverpic'),
-                width = getParams('width'),
-                height = getParams('height'),
-                volume = getParams('volume'),
-                flash = (getParams('flash') == 'true' ? true : false),
-                x5_player = (getParams('x5_player') == 'false' ? false : true),
-                h5_flv = (getParams('h5_flv') == 'true' ? true : false),
-                autoplay = (getParams('autoplay') == 'true' ? true : false),
-                flashUrl = (function () {
-                    var params = getPathParams();
-                    if (params) {
-                        return params.path + '/player/release/QCPlayer.swf';
+            function getPathParams() {
+                var path = location.pathname.split('/');
+                if (path[1] == 'vod-player') {
+                    return {
+                        'path': location.origin + path.slice(0, 4).join('/'),
+                        'appid': path[2],
+                        'fileid': path[3]
                     }
-                    return '//imgcache.qq.com/open/qcloud/video/player/release/QCPlayer.swf'
-                })(),
-                log = getParams('log');
-        /**
-         * 视频类型播放优先级
-         * mobile ：m3u8>mp4
-         * PC ：RTMP>flv>m3u8>mp4
-         */
-
-        var options = {
-            m3u8: 'http://play.iws365.com/live/live.m3u8',
-            autoplay: autoplay,
-            poster : "http://www.cqccxyw.com/upload/admin/20190510/21e4d4d6d4e8f239288208da31444f24.png",
-            live: live,
-            x5_fullscreen: true,
-            width: width || '100%',
-            height: height || '300',
-            volume: volume || 0.5,
-            flash: flash,
-            flashUrl: flashUrl,
-            x5_player: x5_player,
-            h5_flv: h5_flv,
-            wording: {
-                2: '老师还没来呢',
-                2032: '请求视频失败，请检查网络',
-                2048: '请求m3u8文件失败，可能是网络错误或者跨域问题'
-            },
-            listener: function (msg) {
-                if(msg.type == 'load') {
-                    var _div = document.createElement('div');
-                    _div.className = 'marker';
-                    _div.innerText = '测试';
-                    document.querySelector('.vcp-player').appendChild(_div)
+                } else {
+                    return null;
                 }
             }
-        };
-        window.tcplayer = new TcPlayer('video-container', options);
 
-    })();
-</script>
+            var rtmp = getParams('rtmp'),
+                    flv = getParams('flv'),
+                    m3u8 = getParams('m3u8'),
+                    mp4 = getParams('mp4'),
+                    live = (getParams('live') == 'true' ? true : false),
+                    coverpic = getParams('coverpic'),
+                    width = getParams('width'),
+                    height = getParams('height'),
+                    volume = getParams('volume'),
+                    flash = (getParams('flash') == 'true' ? true : false),
+                    x5_player = (getParams('x5_player') == 'false' ? false : true),
+                    h5_flv = (getParams('h5_flv') == 'true' ? true : false),
+                    autoplay = (getParams('autoplay') == 'true' ? true : false),
+                    flashUrl = (function () {
+                        var params = getPathParams();
+                        if (params) {
+                            return params.path + '/player/release/QCPlayer.swf';
+                        }
+                        return '//imgcache.qq.com/open/qcloud/video/player/release/QCPlayer.swf'
+                    })(),
+                    log = getParams('log');
+            /**
+             * 视频类型播放优先级
+             * mobile ：m3u8>mp4
+             * PC ：RTMP>flv>m3u8>mp4
+             */
+
+            var options = {
+                m3u8: 'http://play.iws365.com/live/live.m3u8',
+                autoplay: autoplay,
+                poster: "{$course.course_img}",
+                live: live,
+                x5_fullscreen: true,
+                width: width || '100%',
+                height: height || '300',
+                volume: volume || 0.5,
+                flash: flash,
+                flashUrl: flashUrl,
+                x5_player: x5_player,
+                h5_flv: h5_flv,
+                wording: {
+                    2: '老师还没来呢',
+                    2032: '请求视频失败，请检查网络',
+                    2048: '请求m3u8文件失败，可能是网络错误或者跨域问题'
+                },
+                listener: function (msg) {
+                    if (msg.type == 'load') {
+                        var _div = document.createElement('div');
+                        _div.className = 'marker';
+                        _div.innerText = '';
+                        document.querySelector('.vcp-player').appendChild(_div)
+                    }
+                }
+            };
+            window.tcplayer = new TcPlayer('video-container', options);
+
+        })();
+    </script>
+    <else/>
+    <h2 style="text-align: center">
+        暂无直播课程！
+    </h2>
+</if>
+</body>
+
 </html>

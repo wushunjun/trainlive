@@ -111,7 +111,7 @@ class CourseController extends AdminBaseController
         if($res){
             if($status == 1)
                 model('course')->where(['course_id'=>['neq',$course_id]])->update(['course_status'=>0]);
-            $url = $this->getPushUrl('push.iws365.com','live','562d9f6ea5580321dfedac5de0c2a3e3',time() + 3600);
+            $url = $this->getPushUrl('push.iws365.com','live','562d9f6ea5580321dfedac5de0c2a3e3',time() + 3600 * 8);
             $this->ajaxReturn(['status'=>1,'message'=>'成功','data'=>$url]);
         }else{
             $this->ajaxReturn(['status'=>0,'message'=>'操作失败']);

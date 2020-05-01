@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="/static/js/jquery.js" charset="utf-8"></script>
+    <script src="/static/js/layer/layer.js" charset="utf-8"></script>
+    <title>会场培训直播</title>
+</head>
+<style>
+    .box {
+
+        height: 50%;
+        margin: 35% 20px 0 20px;
+        background-color: #fff;
+        box-sizing: border-box;
+        border-radius: 15px;
+        padding: 20px;
+    }
+
+    .title {
+        font-weight: bold;
+
+    }
+
+    input {
+        margin-top: 20px;
+        height: 30px;
+        border: none;
+        background-color: #f2f2f2;
+        font-size: 18px;
+        outline: none;
+        width: 90%;
+        color: #999999;
+        border-radius: 10px;
+        padding: 5px 0 5px 10px;
+    }
+
+    .dfac {
+        display: flex;
+        align-items: center;
+    }
+
+    .pwd {
+        color: #4a66da;
+        font-size: 18px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .login {
+        width: 80%;
+        margin-left: 10%;
+        margin-bottom: 5%;
+        margin-top: 5%;
+        border: 0;
+        background-color: #4a66da;
+        color: #fff;
+        height: 35px;
+        border-radius: 20px;
+    }
+    a{
+        text-decoration:none;
+    }
+</style>
+
+<body background="/web_static/images/background.png">
+<div class="box">
+    <span class="title">输入密码:</span>
+    <input name="password" type="text" placeholder="请输入您的密码">
+
+    <div class="pwd"><a href="{:url('register')}">设置密码</a></div>
+    <button class="login">进入直播</button>
+</div>
+
+</body>
+<script>
+    $(function () {
+        $('.login').click(function () {
+            var password = $("input[name=password]").val();
+            $.ajax({
+                url: "{:url('do_login')}",
+                data: {password: password},
+                dataType: 'json',
+                success: function (res) {
+                    if (res.status == 1) {
+                        location.reload();
+                    } else {
+                        layer.msg(res.message,{icon:2});
+                    }
+                }
+            })
+        })
+    })
+</script>
+</html>

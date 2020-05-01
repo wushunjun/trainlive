@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 微信直播
-Source Server Version : 50557
-Source Host           : 62.234.18.3:3306
-Source Database       : hczb_iws365_com
+Source Server         : study
+Source Server Version : 50553
+Source Host           : localhost:3306
+Source Database       : rongen
 
 Target Server Type    : MYSQL
-Target Server Version : 50557
+Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2019-10-02 17:08:24
+Date: 2019-11-06 14:59:28
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -676,6 +676,27 @@ CREATE TABLE `cmf_user_action` (
 -- Records of cmf_user_action
 -- ----------------------------
 INSERT INTO `cmf_user_action` VALUES ('1', '1', '1', '1', '2', '1', '用户登录', 'login', 'user', '');
+
+-- ----------------------------
+-- Table structure for `cmf_user_token`
+-- ----------------------------
+DROP TABLE IF EXISTS `cmf_user_token`;
+CREATE TABLE `cmf_user_token` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `user_id` bigint(20) NOT NULL DEFAULT '0' COMMENT '用户id',
+  `expire_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT ' 过期时间',
+  `create_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '创建时间',
+  `token` varchar(64) NOT NULL DEFAULT '' COMMENT 'token',
+  `device_type` varchar(10) NOT NULL DEFAULT '' COMMENT '设备类型;mobile,android,iphone,ipad,web,pc,mac,wxapp',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='用户客户端登录 token 表';
+
+-- ----------------------------
+-- Records of cmf_user_token
+-- ----------------------------
+INSERT INTO `cmf_user_token` VALUES ('1', '1', '1582557747', '1567005747', '27197ef6e207ccb2709c472ee6d13c73cf75b910968c585bc32ab90aab297b11', 'web');
+INSERT INTO `cmf_user_token` VALUES ('2', '2', '1537882461', '1522330461', 'fe6a39142ffaed5a207e09ce30cb9e14fe6a39142ffaed5a207e09ce30cb9e14', 'web');
+INSERT INTO `cmf_user_token` VALUES ('3', '3', '1586077074', '1570525074', '357bbc1f7821a02895567a96f3e41807bdbbef5103603e7f9ec366fb6df597f0', 'web');
 
 -- ----------------------------
 -- Table structure for `cmf_verification_code`

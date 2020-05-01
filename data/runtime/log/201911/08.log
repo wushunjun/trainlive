@@ -1,0 +1,483 @@
+---------------------------------------------------------------
+[ 2019-11-08T11:28:11+08:00 ] 127.0.0.1 GET /admin
+[ info ] www.trainlive.com/admin [运行时间：0.262000s][吞吐率：3.82req/s] [内存消耗：1,798.44kb] [文件加载：63]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.006000s ]
+[ info ] [ LANG ] E:\www\trainlive\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.trainlive.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\trainlive\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\www\trainlive\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.017000s ]
+[ info ] [ LANG ] E:\www\trainlive\public/../app/admin\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LANG ] E:\www\trainlive\public/../app/admin\lang\zh-cn\admin_menu.php
+[ info ] [ LANG ] E:\www\trainlive\public/../app/admin\lang\zh-cn\admin.php
+[ info ] [ LANG ] E:\www\trainlive\public/../app/user\lang\zh-cn\admin_menu.php
+[ info ] [ LANG ] E:\www\trainlive\public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.019000s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-11-08T11:28:11+08:00 ] 127.0.0.1 GET /admin/public/login.html
+[ info ] www.trainlive.com/admin/public/login.html [运行时间：0.082000s][吞吐率：12.20req/s] [内存消耗：2,028.44kb] [文件加载：66]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.003000s ]
+[ info ] [ LANG ] E:\www\trainlive\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'public',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=0lojd0rhei1t4hhcquvssrssm0',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.trainlive.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\trainlive\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\www\trainlive\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.002000s ]
+[ info ] [ LANG ] E:\www\trainlive\public/../app/admin\lang\zh-cn.php
+[ info ] [ RUN ] app\admin\controller\PublicController->login[ E:\www\trainlive\app\admin\controller\PublicController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] themes/admin_simpleboot3/admin\\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-11-08T11:28:11+08:00 ] 127.0.0.1 GET /static/admin-login/img/progress.gif
+[ info ] www.trainlive.com/static/admin-login/img/progress.gif [运行时间：0.049000s][吞吐率：20.41req/s] [内存消耗：1,496.51kb] [文件加载：53]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.003000s ]
+[ info ] [ LANG ] E:\www\trainlive\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'admin-login',
+    2 => 'img',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=0lojd0rhei1t4hhcquvssrssm0',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.trainlive.com/static/admin-login/css/supersized.css',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.trainlive.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\trainlive\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\www\trainlive\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.003000s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-11-08T11:28:12+08:00 ] 127.0.0.1 GET /favicon.ico
+[ info ] www.trainlive.com/favicon.ico [运行时间：0.036000s][吞吐率：27.78req/s] [内存消耗：1,496.27kb] [文件加载：53]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.002000s ]
+[ info ] [ LANG ] E:\www\trainlive\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=0lojd0rhei1t4hhcquvssrssm0',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.trainlive.com/admin/public/login.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.trainlive.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\trainlive\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\www\trainlive\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.002000s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-11-08T11:28:16+08:00 ] 127.0.0.1 POST /admin/public/dologin.html
+[ info ] www.trainlive.com/admin/public/dologin.html [运行时间：1.140000s][吞吐率：0.88req/s] [内存消耗：2,380.63kb] [文件加载：68]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.004000s ]
+[ info ] [ LANG ] E:\www\trainlive\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'public',
+    2 => 'dologin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=0lojd0rhei1t4hhcquvssrssm0',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.trainlive.com/admin/public/login.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.trainlive.com',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '32',
+  'connection' => 'close',
+  'host' => 'www.trainlive.com',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'admin',
+  'password' => 'admin123',
+)
+[ info ] [ LANG ] E:\www\trainlive\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\www\trainlive\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.002000s ]
+[ info ] [ LANG ] E:\www\trainlive\public/../app/admin\lang\zh-cn.php
+[ info ] [ RUN ] app\admin\controller\PublicController->doLogin[ E:\www\trainlive\app\admin\controller\PublicController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.223000s ] mysql:host=62.234.18.3;port=3306;dbname=hczb_iws365_com;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_admin` [ RunTime:0.109000s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin` WHERE  `user_login` = 'admin' LIMIT 1 [ RunTime:0.109000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_role_user` [ RunTime:0.109000s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `cmf_role_user` `a` INNER JOIN `cmf_role` `b` ON `a`.`role_id`=`b`.`id` WHERE  `user_id` = 1  AND `status` = 1 LIMIT 1 [ RunTime:0.108000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_user_token` [ RunTime:0.110000s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_user_token` WHERE  `user_id` = 1  AND `device_type` = 'web' LIMIT 1 [ RunTime:0.109000s ]
+[ sql ] [ SQL ] UPDATE `cmf_admin`  SET `user_type`=1,`sex`=1,`birthday`=604771200,`last_login_time`=1573183696,`score`=0,`coin`=0,`balance`=0,`create_time`=1520250387,`user_status`=1,`user_login`='admin',`user_pass`='###65e462e8de559b105d791ca8e1215e45',`user_nickname`='admin',`user_email`='test@qq.com',`user_url`='',`avatar`='',`signature`='',`last_login_ip`='127.0.0.1',`user_activation_key`='',`mobile`='',`more`=NULL  WHERE  `id` = 1 [ RunTime:0.202000s ]
+---------------------------------------------------------------
+[ 2019-11-08T11:28:18+08:00 ] 127.0.0.1 GET /admin/index/index.html
+[ info ] www.trainlive.com/admin/index/index.html [运行时间：0.486000s][吞吐率：2.06req/s] [内存消耗：2,952.30kb] [文件加载：78]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.004000s ]
+[ info ] [ LANG ] E:\www\trainlive\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=0lojd0rhei1t4hhcquvssrssm0; admin_username=admin',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.trainlive.com/admin/public/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.trainlive.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\trainlive\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\www\trainlive\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.002000s ]
+[ info ] [ LANG ] E:\www\trainlive\public/../app/admin\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LANG ] E:\www\trainlive\public/../app/admin\lang\zh-cn\admin_menu.php
+[ info ] [ LANG ] E:\www\trainlive\public/../app/admin\lang\zh-cn\admin.php
+[ info ] [ LANG ] E:\www\trainlive\public/../app/user\lang\zh-cn\admin_menu.php
+[ info ] [ LANG ] E:\www\trainlive\public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.003000s ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\IndexController->index[ E:\www\trainlive\app\admin\controller\IndexController.php ]
+[ info ] [ VIEW ] themes/admin_simpleboot3/admin\index\index.html [ array (
+  0 => 'admin',
+  1 => 'menus',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.158000s ] mysql:host=62.234.18.3;port=3306;dbname=hczb_iws365_com;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_admin` [ RunTime:0.105000s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.105000s ]
+---------------------------------------------------------------
+[ 2019-11-08T11:28:18+08:00 ] 127.0.0.1 GET /admin/main/index.html
+[ info ] www.trainlive.com/admin/main/index.html [运行时间：0.452000s][吞吐率：2.21req/s] [内存消耗：2,644.10kb] [文件加载：76]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.004000s ]
+[ info ] [ LANG ] E:\www\trainlive\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'main',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=0lojd0rhei1t4hhcquvssrssm0; admin_username=admin',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.trainlive.com/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.trainlive.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\trainlive\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\www\trainlive\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.002000s ]
+[ info ] [ LANG ] E:\www\trainlive\public/../app/admin\lang\zh-cn.php
+[ info ] [ LANG ] E:\www\trainlive\public/../app/admin\lang\zh-cn\admin_menu.php
+[ info ] [ LANG ] E:\www\trainlive\public/../app/admin\lang\zh-cn\admin.php
+[ info ] [ LANG ] E:\www\trainlive\public/../app/user\lang\zh-cn\admin_menu.php
+[ info ] [ LANG ] E:\www\trainlive\public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.003000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\MainController->index[ E:\www\trainlive\app\admin\controller\MainController.php ]
+[ info ] [ VIEW ] themes/admin_simpleboot3/admin\main\index.html [ array (
+  0 => 'admin',
+  1 => 'dashboard_widgets',
+  2 => 'dashboard_widget_plugins',
+  3 => 'has_smtp_setting',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.164000s ] mysql:host=62.234.18.3;port=3306;dbname=hczb_iws365_com;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_admin` [ RunTime:0.110000s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.108000s ]
+---------------------------------------------------------------
+[ 2019-11-08T11:28:21+08:00 ] 127.0.0.1 GET /Admin/course/index.html
+[ info ] www.trainlive.com/Admin/course/index.html [运行时间：0.801000s][吞吐率：1.25req/s] [内存消耗：2,957.47kb] [文件加载：81]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.003000s ]
+[ info ] [ LANG ] E:\www\trainlive\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'Admin',
+    1 => 'course',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=0lojd0rhei1t4hhcquvssrssm0; admin_username=admin',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.trainlive.com/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.trainlive.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\trainlive\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\www\trainlive\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.002000s ]
+[ info ] [ LANG ] E:\www\trainlive\public/../app/admin\lang\zh-cn.php
+[ info ] [ LANG ] E:\www\trainlive\public/../app/admin\lang\zh-cn\admin_menu.php
+[ info ] [ LANG ] E:\www\trainlive\public/../app/admin\lang\zh-cn\admin.php
+[ info ] [ LANG ] E:\www\trainlive\public/../app/user\lang\zh-cn\admin_menu.php
+[ info ] [ LANG ] E:\www\trainlive\public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.003000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\CourseController->index[ E:\www\trainlive\app\admin\controller\CourseController.php ]
+[ info ] [ VIEW ] themes/admin_simpleboot3/admin\course\index.html [ array (
+  0 => 'admin',
+  1 => 'keyword',
+  2 => 'lists',
+  3 => 'page',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.150000s ] mysql:host=62.234.18.3;port=3306;dbname=hczb_iws365_com;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_admin` [ RunTime:0.101000s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.101000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_course` [ RunTime:0.101000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `cmf_course` WHERE  `course_id` > 0 LIMIT 1 [ RunTime:0.099000s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_course` WHERE  `course_id` > 0 ORDER BY course_id DESC LIMIT 0,10 [ RunTime:0.100000s ]
+---------------------------------------------------------------
+[ 2019-11-08T11:28:28+08:00 ] 127.0.0.1 GET /admin/course/add.html
+[ info ] www.trainlive.com/admin/course/add.html [运行时间：0.452000s][吞吐率：2.21req/s] [内存消耗：2,627.36kb] [文件加载：76]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.004000s ]
+[ info ] [ LANG ] E:\www\trainlive\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'course',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=0lojd0rhei1t4hhcquvssrssm0; admin_username=admin',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.trainlive.com/Admin/course/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.trainlive.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\trainlive\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\www\trainlive\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.002000s ]
+[ info ] [ LANG ] E:\www\trainlive\public/../app/admin\lang\zh-cn.php
+[ info ] [ LANG ] E:\www\trainlive\public/../app/admin\lang\zh-cn\admin_menu.php
+[ info ] [ LANG ] E:\www\trainlive\public/../app/admin\lang\zh-cn\admin.php
+[ info ] [ LANG ] E:\www\trainlive\public/../app/user\lang\zh-cn\admin_menu.php
+[ info ] [ LANG ] E:\www\trainlive\public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.003000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\CourseController->add[ E:\www\trainlive\app\admin\controller\CourseController.php ]
+[ info ] [ VIEW ] themes/admin_simpleboot3/admin\course\add.html [ array (
+  0 => 'admin',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.158000s ] mysql:host=62.234.18.3;port=3306;dbname=hczb_iws365_com;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_admin` [ RunTime:0.105000s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.105000s ]
+---------------------------------------------------------------
+[ 2019-11-08T11:28:31+08:00 ] 127.0.0.1 GET /admin/course/index.html
+[ info ] www.trainlive.com/admin/course/index.html [运行时间：0.725000s][吞吐率：1.38req/s] [内存消耗：2,957.63kb] [文件加载：81]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.004000s ]
+[ info ] [ LANG ] E:\www\trainlive\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'course',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=0lojd0rhei1t4hhcquvssrssm0; admin_username=admin',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.trainlive.com/admin/course/add.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.trainlive.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\trainlive\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\www\trainlive\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.002000s ]
+[ info ] [ LANG ] E:\www\trainlive\public/../app/admin\lang\zh-cn.php
+[ info ] [ LANG ] E:\www\trainlive\public/../app/admin\lang\zh-cn\admin_menu.php
+[ info ] [ LANG ] E:\www\trainlive\public/../app/admin\lang\zh-cn\admin.php
+[ info ] [ LANG ] E:\www\trainlive\public/../app/user\lang\zh-cn\admin_menu.php
+[ info ] [ LANG ] E:\www\trainlive\public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.003000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\CourseController->index[ E:\www\trainlive\app\admin\controller\CourseController.php ]
+[ info ] [ VIEW ] themes/admin_simpleboot3/admin\course\index.html [ array (
+  0 => 'admin',
+  1 => 'keyword',
+  2 => 'lists',
+  3 => 'page',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.149000s ] mysql:host=62.234.18.3;port=3306;dbname=hczb_iws365_com;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_admin` [ RunTime:0.100000s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.100000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_course` [ RunTime:0.100000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `cmf_course` WHERE  `course_id` > 0 LIMIT 1 [ RunTime:0.099000s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_course` WHERE  `course_id` > 0 ORDER BY course_id DESC LIMIT 0,10 [ RunTime:0.100000s ]
